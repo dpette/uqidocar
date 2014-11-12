@@ -1,0 +1,15 @@
+doctype
+html
+  head
+    title #{title} | Uqido
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/javascripts/jquery-1.11.1.min.js', type='text/javascript')
+    script(src='/javascripts/drive_control.js', type='text/javascript')
+    script(src='/javascripts/mjpg_stream.js', type='text/javascript')
+  body
+    header
+    .container
+      .main-content
+        block content
+    footer
+      p Running on node with Express, Jade and Stylus
