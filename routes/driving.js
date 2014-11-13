@@ -37,11 +37,11 @@ router.get('/go', function(req, res) {
   } else {
     setGpio(11, 0, function(err1) {
       if(err1) {
-        res.json({message: 'CAN\'T STOP!', time: Date.now(), error: err});
+        res.json({message: 'CAN\'T STOP!', time: Date.now(), error: err1});
       } else {
         setGpio(12, 0, function(err2) {
           if(err2)
-            res.json({message: 'CAN\'T STOP!', time: Date.now(), error: err});
+            res.json({message: 'CAN\'T STOP!', time: Date.now(), error: err2});
           else
            res.json({message: 'STOP!', time: Date.now()});
         });
@@ -74,11 +74,11 @@ router.get('/turn', function(req, res) {
 
     setGpio(15, 0, function(err1) {
       if(err1) {
-        res.json({message: 'CAN\'T TURN!', time: Date.now(), error: err});
+        res.json({message: 'CAN\'T TURN!', time: Date.now(), error: err1});
       } else {
         setGpio(13, 0, function(err2) {
           if(err2)
-            res.json({message: 'CAN\'T STOP TURNING!', time: Date.now(), error: err});
+            res.json({message: 'CAN\'T STOP TURNING!', time: Date.now(), error: err2});
           else
            res.json({message: 'STOP TURNING!', time: Date.now()});
         });
