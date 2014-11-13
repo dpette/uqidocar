@@ -7,10 +7,12 @@ var gpio   = require("pi-gpio");
 var setGpio = function(npin, value, callback) {
   var time = Date.now();
   gpio.open(npin, "output", function(err) {
+    console.log("time to open pin " + npin + ": " + (Date.now() - time));
     gpio.write(npin, value, function(err) {
+      console.log("time to write pin " + npin + ": " + (Date.now() - time));
       gpio.close(npin, function(err) {
         callback(err);
-        console.log("time for gpio access" + (Date.now() - time));
+        console.log("time to close pin " + npin + ": " + (Date.now() - time));
       });
     });
   });
