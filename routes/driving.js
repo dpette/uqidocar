@@ -4,17 +4,16 @@ var router = express.Router();
 var gpio   = require("pi-gpio");
 
 
-function setGpio(npin, value) {
-  console.log("pin " + npin + " to " + value);
-}
-
 var setGpio = function(npin, value, callback) {
   gpio.open(npin, "output", function(err) {
     if(err)
       callback(err);
-    gpio.write(npin, value, function() {
-      gpio.close(npin);
-      callback(null);
+    gpio.write(npin, value, function(err) {
+      if(err)
+        callback(err);
+      gpio.close(npin, function(err) {
+        callback(err);
+      });
     });
   });
 };
@@ -22,6 +21,7 @@ var setGpio = function(npin, value, callback) {
 router.get('/go', function(req, res) {
   if(req.query.direction == 1) {
     setGpio(11, 1, function(err) {
+      console.log(err);
       if(err)
         res.json({message: 'CAN\'T GO!', time: Date.now(), error: err});
       else
@@ -65,7 +65,6 @@ router.get('/turn', function(req, res) {
         res.json({message: 'CAN\'T TURN LEFT!', time: Date.now(), error: err});
       else
         res.json({message: 'TURN LEFT!', time: Date.now()});
-
     });
   } else {
     setGpio(15, 0);
