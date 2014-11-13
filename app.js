@@ -4,9 +4,7 @@ var stylus  = require('stylus');
 var nib     = require('nib');
 var driving = require("./routes/driving");
 var logger  = require("morgan");
-var jade  = require("jade");
-
-
+var jade    = require("jade");
 
 // Use nib and stylus with express
 function compile(str, path) {
