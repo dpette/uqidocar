@@ -17,30 +17,17 @@ var setGpio = function(npin, value, callback) {
 router.get('/go', function(req, res) {
   if(req.query.direction == 1) {
     setGpio(11, 1, function(err) {
-      if(err)
-        res.json({message: 'CAN\'T GO!', time: Date.now(), error: err});
-      else
-        res.json({message: 'GO!', time: Date.now()});
+      res.json({message: 'GO!', time: Date.now()});
     });
   } else if(req.query.direction == -1) {
     setGpio(12, 1, function(err) {
-      if(err)
-        res.json({message: 'CAN\'T GO BACK!', time: Date.now(), error: err});
-      else
-        res.json({message: 'GO BACK!', time: Date.now()});
+      res.json({message: 'GO BACK!', time: Date.now()});
     });
   } else {
     setGpio(11, 0, function(err1) {
-      if(err1) {
-        res.json({message: 'CAN\'T STOP!', time: Date.now(), error: err1});
-      } else {
-        setGpio(12, 0, function(err2) {
-          if(err2)
-            res.json({message: 'CAN\'T STOP!', time: Date.now(), error: err2});
-          else
-           res.json({message: 'STOP!', time: Date.now()});
-        });
-      }
+      setGpio(12, 0, function(err2) {
+         res.json({message: 'STOP!', time: Date.now()});
+      });
     });
   }
 });
