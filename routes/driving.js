@@ -10,10 +10,11 @@ var setGpio = function(npin, value, callback) {
     // console.log("time to open pin " + npin + ": " + (Date.now() - time));
     gpio.write(npin, value, function(err) {
       console.log("time to write pin " + npin + ": " + (Date.now() - time));
-      gpio.close(npin, function(err) {
-        callback(err);
-        console.log("time to close pin " + npin + ": " + (Date.now() - time));
-      });
+      callback(err);
+      // gpio.close(npin, function(err) {
+      //   callback(err);
+      //   console.log("time to close pin " + npin + ": " + (Date.now() - time));
+      // });
     });
   // });
 };
