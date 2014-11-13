@@ -17,49 +17,35 @@ var setGpio = function(npin, value, callback) {
 router.get('/go', function(req, res) {
   if(req.query.direction == 1) {
     setGpio(11, 1, function(err) {
-      res.json({message: 'GO!', time: Date.now()});
     });
+    res.json({message: 'GO!', time: Date.now()});
   } else if(req.query.direction == -1) {
     setGpio(12, 1, function(err) {
-      res.json({message: 'GO BACK!', time: Date.now()});
     });
+    res.json({message: 'GO BACK!', time: Date.now()});
   } else {
     setGpio(11, 0, function(err1) {
       setGpio(12, 0, function(err2) {
-         res.json({message: 'STOP!', time: Date.now()});
       });
     });
+    res.json({message: 'STOP!', time: Date.now()});
   }
 });
 
 router.get('/turn', function(req, res) {
   if(req.query.direction == 1) {
     setGpio(15, 1, function(err) {
-      if(err)
-        res.json({message: 'CAN\'T TURN RIGHT!', time: Date.now(), error: err});
-      else
-        res.json({message: 'TURN RIGHT!', time: Date.now()});
-
+      res.json({message: 'TURN RIGHT!', time: Date.now()});
     });
   } else if(req.query.direction == -1) {
     setGpio(13, 1, function(err) {
-      if(err)
-        res.json({message: 'CAN\'T TURN LEFT!', time: Date.now(), error: err});
-      else
-        res.json({message: 'TURN LEFT!', time: Date.now()});
+      res.json({message: 'TURN LEFT!', time: Date.now()});
     });
   } else {
     setGpio(15, 0, function(err1) {
-      if(err1) {
-        res.json({message: 'CAN\'T TURN!', time: Date.now(), error: err1});
-      } else {
-        setGpio(13, 0, function(err2) {
-          if(err2)
-            res.json({message: 'CAN\'T STOP TURNING!', time: Date.now(), error: err2});
-          else
-            res.json({message: 'STOP TURNING!', time: Date.now()});
-        });
-      }
+      setGpio(13, 0, function(err2) {
+        res.json({message: 'STOP TURNING!', time: Date.now()});
+      });
     });
   }
 });
