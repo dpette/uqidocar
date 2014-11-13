@@ -13,6 +13,6 @@ block content
         a.drive_control.button.s(href="#", data-drive-go=-1) s
         a.drive_control.button.d(href="#", data-drive-turn=1) d
   script
-    $(document).on("load", createImageLayer("http://192.168.1.28:8080"));
-    $(document).on("keydown", function(e) {keyboardControl(e)});
-    $(".drive_control").on("mousedown", function(e) {mouseControl(e)});
+    | $(document).on("load", createImageLayer("http://192.168.1.28:8080"));
+    | $(document).on("keydown", function(e) {keyboardControl(e)});
+    | $(".drive_control").on("mousedown", function(e) {mouseControl(e)});
