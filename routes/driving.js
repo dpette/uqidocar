@@ -39,18 +39,18 @@ router.get('/go', function(req, res) {
 router.get('/turn', function(req, res) {
   if(req.query.direction == 1) {
     setGpio(15, 1, function(err) {
-      res.json({message: 'TURN RIGHT!', time: Date.now()});
     });
+    res.json({message: 'TURN RIGHT!', time: Date.now()});
   } else if(req.query.direction == -1) {
     setGpio(13, 1, function(err) {
-      res.json({message: 'TURN LEFT!', time: Date.now()});
     });
+    res.json({message: 'TURN LEFT!', time: Date.now()});
   } else {
     setGpio(15, 0, function(err1) {
       setGpio(13, 0, function(err2) {
-        res.json({message: 'STOP TURNING!', time: Date.now()});
       });
     });
+    res.json({message: 'STOP TURNING!', time: Date.now()});
   }
 });
 
