@@ -9,19 +9,19 @@ var setGpio = function(npin, value, callback) {
     if(err) {
       console.log("ERRORE APERTURA PIN " + npin);
       callback(err);
-    } else {
+    } // else {
       gpio.write(npin, value, function(err) {
         if(err) {
           console.log("ERRORE SCRITTURA PIN " + npin);
           callback(err);
-        } else {
-          gpio.close(npin, function(err) {
-            console.log("ERRORE CHIUSURA PIN " + npin);
-            callback(err);
-          });
-        }
+        } // else {
+        gpio.close(npin, function(err) {
+          console.log("ERRORE CHIUSURA PIN " + npin);
+          callback(err);
+        });
+        // }
       });
-    }
+    // }
   });
 };
 
