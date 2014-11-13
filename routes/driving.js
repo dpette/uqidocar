@@ -36,11 +36,11 @@ router.get('/go', function(req, res) {
     });
   } else {
     setGpio(11, 0, function(err1) {
-      if(err) {
+      if(err1) {
         res.json({message: 'CAN\'T STOP!', time: Date.now(), error: err});
       } else {
         setGpio(12, 0, function(err2) {
-          if(err)
+          if(err2)
             res.json({message: 'CAN\'T STOP!', time: Date.now(), error: err});
           else
            res.json({message: 'STOP!', time: Date.now()});
