@@ -8,20 +8,23 @@ var setGpio = function(npin, value, callback) {
   gpio.open(npin, "output", function(err) {
     if(err)
       callback(err);
-    gpio.write(npin, value, function(err) {
-      if(err)
-        callback(err);
-      gpio.close(npin, function(err) {
-        callback(err);
+    else {
+      gpio.write(npin, value, function(err) {
+        if(err) {
+          callback(err);
+        } else {
+          gpio.close(npin, function(err) {
+            callback(err);
+          });
+        }
       });
-    });
+    }
   });
 };
 
 router.get('/go', function(req, res) {
   if(req.query.direction == 1) {
     setGpio(11, 1, function(err) {
-      console.log(err);
       if(err)
         res.json({message: 'CAN\'T GO!', time: Date.now(), error: err});
       else
