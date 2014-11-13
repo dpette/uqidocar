@@ -58,7 +58,7 @@ router.get('/go', function(req, res) {
 
 router.get('/turn', function(req, res) {
   if(req.query.direction == 1) {
-    setGpio(13, 1, function(err) {
+    setGpio(15, 1, function(err) {
       if(err)
         res.json({message: 'CAN\'T TURN RIGHT!', time: Date.now(), error: err});
       else
@@ -66,7 +66,7 @@ router.get('/turn', function(req, res) {
 
     });
   } else if(req.query.direction == -1) {
-    setGpio(15, 1, function(err) {
+    setGpio(13, 1, function(err) {
       if(err)
         res.json({message: 'CAN\'T TURN LEFT!', time: Date.now(), error: err});
       else
