@@ -14,6 +14,9 @@ function pressButton(dataDriveGo, dataDriveTurn){
 function keyboardControl(e) {
 
 
+  var isGoing   = false;
+  var isTurning = false;
+
     // GO!
   if(e.which == 87 && !isGoing) {
     isGoing = true;
