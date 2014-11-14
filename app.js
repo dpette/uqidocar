@@ -27,6 +27,8 @@ app.use(express.static(__dirname + '/public'));
 
 // app logic
 app.get('/', function (req, res) {
+  console.log("host" + req.host);
+  console.log("port" + req.port);
   res.render("index", {title: "Uqido Car"});
 });
 
