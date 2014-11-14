@@ -6,6 +6,7 @@ block content
     p Otherwise, you can use buttons below!
   .control_panel
     #video_stream.video_stream
+      img(src="http://#{host}:8080/?action=stream")
       .placeholder
         p Can't reach video, refresh the page or wait till nothing!
     .keyboard
@@ -14,6 +15,6 @@ block content
         a.drive_control.button.s(href="#", data-drive-go=-1) s
         a.drive_control.button.d(href="#", data-drive-turn=1) d
   script
-    | $(document).on("load", createImageLayer("http://#{host}:8080"));
+    //- | $(document).on("load", createImageLayer("http://#{host}:8080"));
     | $(document).on("keydown", function(e) {keyboardControl(e)});
     | $(".drive_control").on("mousedown touchstart", function(e) {mouseControl(e)});
