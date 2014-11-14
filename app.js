@@ -27,7 +27,7 @@ app.use(express.static(__dirname + '/public'));
 
 // app logic
 app.get('/', function (req, res) {
-  res.render("index", {title: "Uqido Car"});
+  res.render("index", {title: "Uqido Car", host: req.host});
 });
 
 app.use("/driving", driving);
