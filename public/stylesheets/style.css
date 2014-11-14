@@ -99,6 +99,7 @@
   }
   .control_panel .keyboard .button {
     border-radius: 100%;
+    line-height: 1.5;
   }
   .control_panel .keyboard .button.w {
     left: 20px;
