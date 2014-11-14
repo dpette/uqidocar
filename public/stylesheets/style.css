@@ -65,6 +65,9 @@
   left: 170px;
   top: 85px;
 }
+.control_panel .keyboard .button:after {
+  content: attr(data-desktop-label);
+}
 .control_panel .keyboard .button:hover {
   background-color: #cbc7c3;
 }
@@ -91,9 +94,30 @@
   }
   .control_panel .keyboard {
     position: fixed;
+    width: 100%;
+    right: auto;
   }
   .control_panel .keyboard .button {
     border-radius: 100%;
+  }
+  .control_panel .keyboard .button.w {
+    left: 20px;
+  }
+  .control_panel .keyboard .button.s {
+    left: 20px;
+  }
+  .control_panel .keyboard .button.a {
+    left: auto;
+    top: 40px;
+    right: 105px;
+  }
+  .control_panel .keyboard .button.d {
+    left: auto;
+    right: 20px;
+    top: 40px;
+  }
+  .control_panel .keyboard .button:after {
+    content: attr(data-mobile-label);
   }
   .control_panel .video_stream img {
     height: auto;

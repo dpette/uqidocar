@@ -10,10 +10,10 @@ block content
       .placeholder
         p Can't reach video, refresh the page or wait till nothing!
     .keyboard
-        a.drive_control.button.w(href="#", data-drive-go=1) w
-        a.drive_control.button.a(href="#", data-drive-turn=-1) a
-        a.drive_control.button.s(href="#", data-drive-go=-1) s
-        a.drive_control.button.d(href="#", data-drive-turn=1) d
+        a.drive_control.button.w(href="#", data-desktop-label="w", data-mobile-label="u", data-drive-go=1) 
+        a.drive_control.button.a(href="#", data-desktop-label="a", data-mobile-label="l", data-drive-turn=-1)
+        a.drive_control.button.s(href="#", data-desktop-label="s", data-mobile-label="d", data-drive-go=-1)
+        a.drive_control.button.d(href="#", data-desktop-label="d", data-mobile-label="r", data-drive-turn=1)
   script
     //- | $(document).on("load", createImageLayer("http://#{host}:8080"));
     | $(document).on("keydown", function(e) {keyboardControl(e)});

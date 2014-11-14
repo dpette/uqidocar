@@ -60,25 +60,25 @@ font-family                   = Helvetica, sans-serif
       opacity 0.5
     
 
-    .button.w 
-      left: 85px;
-      top: 0;
-    
+    .button.w
+      left 85px
+      top 0
 
-    .button.a 
-      left: 0;
-      top: 85px;
-    
+    .button.a
+      left 0
+      top 85px
 
-    .button.s 
-      left: 85px;
-      top: 85px;
-    
+    .button.s
+      left 85px
+      top 85px
 
-    .button.d 
-      left: 170px;
-      top: 85px;
-    
+    .button.d
+      left 170px
+      top 85px
+      
+    .button:after
+      content attr(data-desktop-label)
+
 
     .button:hover  
       background-color: keyboard-button-color-hover;
@@ -103,8 +103,25 @@ font-family                   = Helvetica, sans-serif
 
     .keyboard 
       position fixed
+      width 100%
+      right auto
       .button
         border-radius 100%;
+      .button.w
+        left 20px
+      .button.s
+        left 20px
+      .button.a
+        left auto
+        top 40px
+        right 105px
+      .button.d
+        left auto
+        right 20px
+        top 40px
+      
+      .button:after
+        content attr(data-mobile-label)
 
     .video_stream
       img
