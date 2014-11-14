@@ -12,7 +12,7 @@ var setGpio = function(npin, value, callback) {
   }
   var time = Date.now();
   gpio.write(npin, value, function(err) {
-    console.log("time to write pin " + npin + ": " + (Date.now() - time));
+    // console.log("time to write pin " + npin + ": " + (Date.now() - time));
     callback(err);
   });
 };
