@@ -12,8 +12,8 @@ block content
     .keyboard
         a.drive_control.button.w(href="#", data-desktop-label="w", data-mobile-label="↑", data-drive-go=1) 
         a.drive_control.button.a(href="#", data-desktop-label="a", data-mobile-label="←", data-drive-turn=-1)
-        a.drive_control.button.s(href="#", data-desktop-label="s", data-mobile-label="→", data-drive-go=-1)
-        a.drive_control.button.d(href="#", data-desktop-label="d", data-mobile-label="↓", data-drive-turn=1)
+        a.drive_control.button.s(href="#", data-desktop-label="s", data-mobile-label="↓", data-drive-go=-1)
+        a.drive_control.button.d(href="#", data-desktop-label="d", data-mobile-label="→", data-drive-turn=1)
   script
     //- | $(document).on("load", createImageLayer("http://#{host}:8080"));
     | $(document).on("keydown", function(e) {keyboardControl(e)});
