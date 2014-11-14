@@ -106,7 +106,7 @@ function mouseControl(e) {
     $.get("/driving/go?direction=" + buttonPressed.data("driveGo"), function(data) {
       console.log(data.message);
       pressButton(buttonPressed.data("driveGo"), null);
-      buttonPressed.on("mouseup", function(e) {
+      buttonPressed.on("mouseup touchend", function(e) {
         e.preventDefault();
         if(isGoing) {
           isGoing = false;
@@ -124,7 +124,7 @@ function mouseControl(e) {
     $.get("/driving/turn?direction=" + buttonPressed.data("driveTurn"), function(data) {
       console.log(data.message);
       pressButton(null, buttonPressed.data("driveTurn"));
-      buttonPressed.on("mouseup", function(e) {
+      buttonPressed.on("mouseup touchend", function(e) {
         e.preventDefault();
         if(isTurning) {
           isTurning = false;

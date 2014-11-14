@@ -1,8 +1,9 @@
 extend layout
 block content
-  h1 Uqido Car
-  p WASD is the way!
-  p Otherwise, you can use buttons below!
+  .presentation
+    h1 Uqido Car
+    p WASD is the way!
+    p Otherwise, you can use buttons below!
   .control_panel
     #video_stream.video_stream
       .placeholder
@@ -15,4 +16,4 @@ block content
   script
     | $(document).on("load", createImageLayer("http://#{host}:8080"));
     | $(document).on("keydown", function(e) {keyboardControl(e)});
-    | $(".drive_control").on("mousedown", function(e) {mouseControl(e)});
+    | $(".drive_control").on("mousedown touchstart", function(e) {mouseControl(e)});

@@ -68,3 +68,32 @@
 .control_panel .keyboard .button.pressed {
   background-color: #b9b9b7;
 }
+@media (max-width: 720px) {
+  body {
+    margin: 0;
+  }
+  html,
+  body,
+  .container,
+  .main-content,
+  .control_panel {
+    height: 100%;
+  }
+  .control_panel {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+  }
+  .control_panel .keyboard .button {
+    border-radius: 100%;
+  }
+  .presentation {
+    position: absolute;
+  }
+  footer {
+    position: absolute;
+    bottom: 0;
+  }
+}

@@ -88,6 +88,30 @@ font-family                   = Helvetica, sans-serif
     .button.pressed 
       background-color: keyboard-button-color-pressed;
     
+@media (max-width: 720px)
+  body
+    margin 0
+
+  html, body, .container, .main-content, .control_panel
+    height 100%
+
+  .control_panel
+    position absolute
+    top 0
+    width 100%
+    height 100%  
+    z-index 10
+
+    .keyboard 
+      .button
+        border-radius 100%;
+
+  .presentation
+    position absolute
+
+  footer
+    position absolute
+    bottom 0
 
 
   
