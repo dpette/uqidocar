@@ -27,9 +27,7 @@ app.use(express.static(__dirname + '/public'));
 
 // app logic
 app.get('/', function (req, res) {
-  console.log("host" + req.host);
-  console.log("port" + req.port);
-  res.render("index", {title: "Uqido Car"});
+  res.render("index", {title: "Uqido Car", host: req.hostname});
 });
 
 app.use("/driving", driving);
@@ -39,5 +37,5 @@ var server = app.listen(3000, function () {
   var host = server.address().address;
   var port = server.address().port;
 
-  console.log('Example app listening at http://%s:%s', host, port);
+  console.log('Uqido car app listening at http://%s:%s in %s mode', host, port, app.settings.env);
 });
