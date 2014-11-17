@@ -35,6 +35,35 @@ font-family                   = Helvetica, sans-serif
       height: 100%;  
       z-index 10
     
+  .button
+    display block
+    text-decoration none
+    text-transform uppercase
+    text-align center
+    font-family font-family
+    position absolute
+    color:keyboard-button-font-color
+    border 1px solid rgba(0,0,0,0.05)
+    background-color keyboard-button-color
+    opacity 0.5
+    border-radius 2px
+
+  .button:hover  
+    background-color: keyboard-button-color-hover;
+    
+  .menu
+    .button
+      width 50px
+      height 50px
+      top 10px
+      z-index 20
+      font-size 30px;
+      line-height 1.7
+    .button.reload_stream
+      right 10px
+    .button.snapshot
+      right 70px
+
   .keyboard 
     width: 252px;
     height: 167px;
@@ -46,18 +75,8 @@ font-family                   = Helvetica, sans-serif
     .button 
       width:  80px;
       height: 80px;
-      display: block;
-      background-color: keyboard-button-color;
       font-size: 50px;
-      text-decoration: none;
-      text-transform: uppercase;
       line-height: 1.7;
-      text-align: center;
-      color: keyboard-button-font-color;
-      border: 1px solid rgba(0,0,0,0.05);
-      font-family: font-family;
-      position: absolute;
-      opacity 0.5
     
 
     .button.w
@@ -80,8 +99,6 @@ font-family                   = Helvetica, sans-serif
       content attr(data-desktop-label)
 
 
-    .button:hover  
-      background-color: keyboard-button-color-hover;
     
 
     .button.pressed 

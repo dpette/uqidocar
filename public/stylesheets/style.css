@@ -25,6 +25,36 @@
   height: 100%;
   z-index: 10;
 }
+.control_panel .button {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  position: absolute;
+  color: #545454;
+  border: 1px solid rgba(0,0,0,0.05);
+  background-color: #f2f1f0;
+  opacity: 0.5;
+  border-radius: 2px;
+}
+.control_panel .button:hover {
+  background-color: #cbc7c3;
+}
+.control_panel .menu .button {
+  width: 50px;
+  height: 50px;
+  top: 10px;
+  z-index: 20;
+  font-size: 30px;
+  line-height: 1.7;
+}
+.control_panel .menu .button.reload_stream {
+  right: 10px;
+}
+.control_panel .menu .button.snapshot {
+  right: 70px;
+}
 .control_panel .keyboard {
   width: 252px;
   height: 167px;
@@ -36,18 +66,8 @@
 .control_panel .keyboard .button {
   width: 80px;
   height: 80px;
-  display: block;
-  background-color: #f2f1f0;
   font-size: 50px;
-  text-decoration: none;
-  text-transform: uppercase;
   line-height: 1.7;
-  text-align: center;
-  color: #545454;
-  border: 1px solid rgba(0,0,0,0.05);
-  font-family: Helvetica, sans-serif;
-  position: absolute;
-  opacity: 0.5;
 }
 .control_panel .keyboard .button.w {
   left: 85px;
@@ -67,9 +87,6 @@
 }
 .control_panel .keyboard .button:after {
   content: attr(data-desktop-label);
-}
-.control_panel .keyboard .button:hover {
-  background-color: #cbc7c3;
 }
 .control_panel .keyboard .button.pressed {
   background-color: #b9b9b7;

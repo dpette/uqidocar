@@ -18,14 +18,14 @@ function keyboardControl(e) {
     isGoing = true;
     $.get("/driving/go?direction=1&time=" + $.now(), function(data) {
       console.log(data.message);
-      console.log("time from end of action and callback = " + ($.now() - data.time) + "ms");
+      // console.log("time from end of action and callback = " + ($.now() - data.time) + "ms");
       pressButton(1, undefined);
       $(document).on("keyup", function(e) {
         if(e.which == 87 && isGoing) {
           isGoing = false;
           $.get("/driving/go?direction=0&time=" + $.now(), function(data) {
             console.log(data.message);
-            console.log("time from end of action and callback = " + ($.now() - data.time) + "ms");
+            // console.log("time from end of action and callback = " + ($.now() - data.time) + "ms");
             pressButton(0, undefined);
           });
         }
@@ -38,14 +38,14 @@ function keyboardControl(e) {
     isGoing = true;
     $.get("/driving/go?direction=-1&time=" + $.now(), function(data){
       console.log(data.message);
-      console.log("time from end of action and callback = " + ($.now() - data.time) + "ms");
+      // console.log("time from end of action and callback = " + ($.now() - data.time) + "ms");
       pressButton(-1, undefined);
       $(document).on("keyup", function(e) {
         if(e.which == 83 && isGoing) {
           isGoing = false;
           $.get("/driving/go?direction=0&time=" + $.now(), function(data) {
             console.log(data.message);
-            console.log("time from end of action and callback = " + ($.now() - data.time) + "ms");
+            // console.log("time from end of action and callback = " + ($.now() - data.time) + "ms");
             pressButton(0, undefined);
           });
         }
@@ -58,14 +58,14 @@ function keyboardControl(e) {
     isTurning = true;
     $.get("/driving/turn?direction=-1&time=" + $.now(), function(data){
       console.log(data.message);
-      console.log("time from end of action and callback = " + ($.now() - data.time) + "ms");
+      // console.log("time from end of action and callback = " + ($.now() - data.time) + "ms");
       pressButton(undefined, -1);
       $(document).on("keyup", function(e) {
         if(e.which == 65 && isTurning) {
           isTurning = false;
           $.get("/driving/turn?direction=0&time=" + $.now(), function(data) {
             console.log(data.message);
-            console.log("time from end of action and callback = " + ($.now() - data.time) + "ms");
+            // console.log("time from end of action and callback = " + ($.now() - data.time) + "ms");
             pressButton(undefined, 0);
           });
         }
@@ -78,14 +78,14 @@ function keyboardControl(e) {
     isTurning = true;
     $.get("/driving/turn?direction=1&time=" + $.now(), function(data){
       console.log(data.message);
-      console.log("time from end of action and callback = " + ($.now() - data.time) + "ms");
+      // console.log("time from end of action and callback = " + ($.now() - data.time) + "ms");
       pressButton(null, 1);
       $(document).on("keyup", function(e) {
         if(e.which == 68 && isTurning) {
           isTurning = false;
           $.get("/driving/turn?direction=0&time=" + $.now(), function(data) {
             console.log(data.message);
-            console.log("time from end of action and callback = " + ($.now() - data.time) + "ms");
+            // console.log("time from end of action and callback = " + ($.now() - data.time) + "ms");
             pressButton(null, 0);
           });
         }
