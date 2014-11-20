@@ -10,7 +10,7 @@ block content
       .placeholder
         p Can't reach video, refresh the page or wait till nothing!
     .menu
-      a.button.reload_stream(href="#", onclick="reloadStream('http://#{host}:8080')") R
+      a.button.reload_stream(href="#", onclick="reloadStream('http://#{host}:8080'); return false;") R
       a.button.snapshot(href="http://#{host}:8080/?action=snapshot", target="_blank") S
     .keyboard
       a.drive_control.button.w(href="#", data-desktop-label="w", data-mobile-label="↑", data-drive-go=1) 
